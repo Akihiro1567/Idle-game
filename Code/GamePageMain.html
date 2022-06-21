@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+    </head>
+    <body>
+        <style>
+            #c1 {
+                float: left;
+                width: 75%;
+            }
+            #c2 {
+                float: right;
+                width: 25%;
+            }
+        </style>
+        <div id="c1">
+        <h1>Battle of the clicks!</h1>
+        <div id="ClickN">
+            <p id="clicks"> 0 clicks</p>
+        </div>
+        <div id="CpS">
+            <p id="cps"> 0 cps</p>
+        </div>
+        <button onclick="click()"> Click!</button>
+        </div>
+        <div id="c2">
+        <div id="Arena">
+        <h2> Arena!</h2>
+        </div>
+        <div id="shop">
+        <h2> Shop!</h2>
+        </div>
+        </div>
+        <script>
+            var clicks = 0;
+            var cps = 0;
+            var cpc = 1;
+
+            function click(){
+                clicks += cpc;
+            }
+            
+            function update(){
+                clicks += cps;
+                document.getElementById('clicks').innerHTML = `You have ${clicks} clicks`;
+            }
+
+            setInterval(update, 1);
+        </script>
+    </body>
+</html>
